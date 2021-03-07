@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".Activity.WriteActivity">
+
+    <TextView
+        android:id="@+id/writeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="오늘의 활동을 글로 담아보세요."
+        android:textColor="@color/icon"
+        android:textSize="24sp"
+        app:fontFamily="@font/nanumsquare_acr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/writeText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="활동시간:"
+        android:textColor="@color/icon"
+        android:textSize="18sp"
+        app:fontFamily="@font/nanumsquare_acr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.33"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/writeText" />
+
+    <TextView
+        android:id="@+id/writeTimeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="0H 00M"
+        android:textColor="@color/icon"
+        android:textSize="18sp"
+        app:fontFamily="@font/nanumsquare_acr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.66"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/writeText" />
+
+    <Button
+        android:id="@+id/writePhotoAddBtn"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="96dp"
+        android:background="@drawable/post_btn"
+        android:shadowColor="#000000"
+        android:shadowDx="@android:dimen/dialog_min_width_major"
+        android:shadowDy="@android:dimen/thumbnail_height"
+        android:shadowRadius="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/writeText2" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginTop="76dp"
+        android:background="@color/icon"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/writePhotoAddBtn"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Space
+        android:id="@+id/photosize"
+        android:layout_width="wrap_content"
+        android:layout_height="144dp"
+        android:layout_marginEnd="112dp"
+        android:layout_marginRight="112dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/view3"
+        app:layout_constraintEnd_toStartOf="@+id/writePhotoAddBtn"
+        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.985" />
+
+    <EditText
+        android:id="@+id/writeTilteText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="20"
+        android:hint="제목을 입력해주세요"
+        android:inputType="textLongMessage"
+        android:textColor="@color/icon"
+        android:textColorHint="@color/icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+    <EditText
+        android:id="@+id/writeSentenceText"
+        android:layout_width="wrap_content"
+        android:layout_height="191dp"
+        android:layout_marginTop="10dp"
+        android:ems="20"
+        android:hint="오늘 활동에 대한 간단한 글을 남겨주세요"
+        android:inputType="textLongMessage"
+        android:textColor="@color/icon"
+        android:textColorHint="@color/icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/writeTilteText" />
+
+    <Button
+        android:id="@+id/writeFinishBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:text="작성완료"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/writeSentenceText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

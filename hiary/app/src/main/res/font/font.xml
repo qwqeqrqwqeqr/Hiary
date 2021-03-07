@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <font android:font="@font/font_iropke_m" />
+    <font android:font="@font/nanumsquare_acb"/>
+    <font android:font="@font/nanumsquare_aceb"/>
+    <font android:font="@font/nanumsquare_acr"/>
+    <font android:font="@font/nanumsquare_acl"/>
+
+
+</font-family>
