@@ -8,17 +8,19 @@ import com.example.hiary.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    var contentArray: ArrayList<MainContents> = ArrayList() //contents class RecyclerView Data Array
+    var mainContentArray: ArrayList<MainContents> = ArrayList() //contents class RecyclerView Data Array
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        mainRecyclerView.layoutManager = LinearLayoutManager(this)
-//        mainRecyclerView.adapter = MainAdapter(contentArray,this)
+//        writeMenuRecyclerView.layoutManager = LinearLayoutManager(this)
+//        writeMenuRecyclerView.adapter = MainAdapter(mainContentArray,this)
 
              mainPostBtn.setOnClickListener{
             val mainPostIntent = Intent(this, WriteMenuActivity::class.java)
+                 mainPostIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                 mainPostIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(mainPostIntent)
         }
     }
