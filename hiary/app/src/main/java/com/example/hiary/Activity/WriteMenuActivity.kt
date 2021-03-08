@@ -18,8 +18,8 @@ class WriteMenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_write_menu)
 //
-        writeMenuRecyclerView.layoutManager = LinearLayoutManager(this).also { it.orientation = LinearLayoutManager.HORIZONTAL }
-        writeMenuRecyclerView.adapter = WriteMenuAdapter(subContentArray,this)
+//        writeMenuRecyclerView.layoutManager = LinearLayoutManager(this).also { it.orientation = LinearLayoutManager.HORIZONTAL }
+//        writeMenuRecyclerView.adapter = WriteMenuAdapter(subContentArray,this)
 
 
         finishBtn.setOnClickListener {
