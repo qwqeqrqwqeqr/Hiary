@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_write_menu.*
 
 class WriteMenuActivity : AppCompatActivity() {
-    var subContentArray: ArrayList<SubContents> = ArrayList()
+    var subContentArray: MutableList<SubContents> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

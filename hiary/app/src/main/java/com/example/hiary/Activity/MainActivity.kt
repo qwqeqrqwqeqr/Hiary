@@ -8,7 +8,7 @@ import com.example.hiary.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    var mainContentArray: ArrayList<MainContents> = ArrayList() //contents class RecyclerView Data Array
+    var mainContentArray: MutableList<MainContents> = mutableListOf() //contents class RecyclerView Data Array
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

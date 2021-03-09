@@ -1,11 +1,12 @@
 package com.example.hiary.Adapter
 
 import android.content.Context
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hiary.Data.MainContents
 
-class MainAdapter(val items: ArrayList<MainContents>, val context: Context):RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class MainAdapter(val items: MutableList<MainContents>, val context: Context):RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         TODO("Not yet implemented")
     }
@@ -16,5 +17,9 @@ class MainAdapter(val items: ArrayList<MainContents>, val context: Context):Recy
 
     override fun getItemCount(): Int {
         TODO("Not yet implemented")
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return super.getItemViewType(position)
     }
 }

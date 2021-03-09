@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="156dp"
-        android:text="취미 생활중"
+        android:text="취미 생활 중"
         android:textColor="@color/icon"
         android:textSize="36sp"
         app:fontFamily="@font/nanumsquare_acr"
