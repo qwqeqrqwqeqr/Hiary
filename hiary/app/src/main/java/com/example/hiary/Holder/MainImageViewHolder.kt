@@ -5,12 +5,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hiary.R
-import kotlinx.android.synthetic.main.activity_main.view.*
 
 class MainImageViewHolder (view: View) : RecyclerView.ViewHolder(view){
-    val Date : TextView = view.findViewById(R.id.Date)
-    val Timer : TextView = view.findViewById(R.id.Timer)
-    val Title : TextView = view.findViewById(R.id.Title)
-    val Contents: TextView = view.findViewById(R.id.Contents)
-    val Image: ImageView = view.findViewById(R.id.Image)
+    val date : TextView = view.findViewById(R.id.date)
+    val time : TextView = view.findViewById(R.id.timer)
+    val title : TextView = view.findViewById(R.id.title)
+    val contents: TextView = view.findViewById(R.id.contents)
+    val image: ImageView = view.findViewById(R.id.image)
 }

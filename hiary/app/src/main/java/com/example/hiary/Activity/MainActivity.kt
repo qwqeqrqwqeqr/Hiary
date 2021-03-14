@@ -3,6 +3,8 @@ package com.example.hiary.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.hiary.Adapter.MainAdapter
 import com.example.hiary.Data.MainContents
 import com.example.hiary.R
 import kotlinx.android.synthetic.main.activity_main.*
@@ -14,8 +16,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        writeMenuRecyclerView.layoutManager = LinearLayoutManager(this)
-//        writeMenuRecyclerView.adapter = MainAdapter(mainContentArray,this)
+        mainRecyclerView.layoutManager = LinearLayoutManager(this)
+        mainRecyclerView.adapter = MainAdapter(mainContentArray,this)
 
              mainPostBtn.setOnClickListener{
             val mainPostIntent = Intent(this, WriteMenuActivity::class.java)

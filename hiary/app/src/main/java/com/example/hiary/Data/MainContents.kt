@@ -4,7 +4,7 @@ import android.widget.ImageView
 import java.sql.Time
 import java.util.*
 
-data class MainContents (val type : Int, var image : ImageView?, var title: String, var contents: String, var date: String, var time: String){
+data class MainContents (val type : Int, var imageData : Int, var title: String, var contents: String, var date: String, var time: String){
 
     companion object{
         const val TEXT_TYPE = 0

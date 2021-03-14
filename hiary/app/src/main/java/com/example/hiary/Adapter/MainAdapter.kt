@@ -30,7 +30,20 @@ class MainAdapter(val list: MutableList<MainContents>, val context: Context):Rec
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
        val obj = list[position]
         when (obj.type){
+            MainContents.TEXT_TYPE ->{
+                (holder as MainNotImageViewHolder).title.text = obj.title
+                holder.contents.text =obj.contents
+                holder.date.text = obj.contents
+                holder.time.text = obj.contents
+            }
 
+            MainContents.IMAIGE_TYPE -> {
+                    (holder as MainImageViewHolder).title.text = obj.title
+                    holder.contents.text =obj.contents
+                    holder.date.text=obj.date
+                    holder.time.text=obj.time
+                    holder.image.setImageResource(obj.imageData)
+            }
         }
     }
     override fun getItemCount(): Int {
