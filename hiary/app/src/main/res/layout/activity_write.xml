@@ -54,7 +54,7 @@
         android:layout_width="72dp"
         android:layout_height="72dp"
         android:layout_marginTop="96dp"
-        android:background="@drawable/post_btn"
+        android:background="@drawable/add_btn"
         android:shadowColor="#000000"
         android:shadowDx="@android:dimen/dialog_min_width_major"
         android:shadowDy="@android:dimen/thumbnail_height"

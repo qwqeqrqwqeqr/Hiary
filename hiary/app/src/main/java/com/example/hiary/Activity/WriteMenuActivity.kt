@@ -29,5 +29,12 @@ class WriteMenuActivity : AppCompatActivity() {
             finishIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(finishIntent)
         }
+
+        writeMenuAddBtn.setOnClickListener {
+            val addIntent = Intent(this, AddActivity::class.java)
+            addIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            addIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(addIntent)
+        }
     }
 }
