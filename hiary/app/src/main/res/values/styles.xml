@@ -4,4 +4,13 @@
         <!-- Customize your theme here. -->
     </style>
 
+
+    <style name="addSelectMenuDividerStyle" parent="Widget.AppCompat.Spinner.DropDown">
+        <item name="android:divider">@color/icon</item>
+        <item name="android:dividerHeight">2dp</item>
+    </style>
+    <style name="addSelectMenuTheme" parent="AppTheme">
+        <item name="android:dropDownListViewStyle">@style/addSelectMenuDividerStyle</item>
+    </style>
+
 </resources>

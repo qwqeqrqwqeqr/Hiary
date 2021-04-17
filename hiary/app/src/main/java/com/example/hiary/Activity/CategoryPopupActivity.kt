@@ -24,7 +24,6 @@ class CategoryPopupActivity(context: Context) {
 
 
         categoryPopupAddbtnBtn.setOnClickListener {
-
             dlg.dismiss()
         }
         categoryPopupCancelBtn.setOnClickListener {

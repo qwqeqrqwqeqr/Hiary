@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.CursorAdapter
 import com.example.hiary.Data.Category
 import com.example.hiary.R
 import kotlinx.android.synthetic.main.activity_add.*
@@ -17,18 +18,18 @@ class AddActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add)
 
-        var categorySwitch: Category?
+        var categorySwitch: String?
 
-        var categoryList: ArrayList<Category> = arrayListOf();
+        var categoryList: ArrayList<String> = arrayListOf();
         baseData(categoryList)
 
-        var addActivityspinnerAdapter = ArrayAdapter<Category>(
+        var addActivityspinnerAdapter = ArrayAdapter(
             this,
             android.R.layout.simple_expandable_list_item_1,
             categoryList
         )
         addSelectMenu.adapter = addActivityspinnerAdapter // spinner
-
+        addSelectMenu.setSelection(0)
         //Do it => Category <T> <=> String
 
         addSelectMenu.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -38,7 +39,7 @@ class AddActivity : AppCompatActivity() {
                 position: Int,
                 id: Long
             ) {
-                if(categoryList.get(position).equals(0)){
+                if(categoryList.get(position).equals(1)){
                     val categoryDlg = CategoryPopupActivity(this@AddActivity)
                     categoryDlg.start()
                 }
@@ -49,10 +50,8 @@ class AddActivity : AppCompatActivity() {
             }
         }
     }
-    fun baseData(categoryList : ArrayList<Category>){
-        var baseCategory = Category("선택하세요")
-        var baseCategory2 = Category("추가")
-        categoryList.add(baseCategory)
-        categoryList.add(baseCategory2)
+    fun baseData(categoryList : ArrayList<String>){
+        categoryList.add("선택하세요")
+        categoryList.add("추가")
     }
 }

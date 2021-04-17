@@ -11,13 +11,11 @@
         android:id="@+id/startBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
         android:layout_marginBottom="48dp"
         android:text="활동 시작"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addSelectMenu" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/writeMenuAddBtn"
@@ -46,15 +44,18 @@
     <Spinner
         android:id="@+id/addSelectMenu"
         android:layout_width="300dp"
-        android:layout_height="444dp"
+        android:layout_height="45dp"
         android:layout_marginTop="48dp"
-        android:layout_marginBottom="19dp"
+        android:layout_marginBottom="48dp"
+        android:background="@drawable/add_select_menu_background"
+        android:longClickable="false"
         android:overlapAnchor="false"
         android:spinnerMode="dropdown"
+        android:theme="@style/addSelectMenuTheme"
         app:layout_constraintBottom_toTopOf="@+id/startBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addDate"
-        app:layout_constraintVertical_bias="0.232" />
+        app:layout_constraintVertical_bias="0.6" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
