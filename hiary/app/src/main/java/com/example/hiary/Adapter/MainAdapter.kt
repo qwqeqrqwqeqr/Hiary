@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hiary.Data.MainContents
+import com.example.hiary.DataClass.MainContents
 import com.example.hiary.Holder.MainImageViewHolder
 import com.example.hiary.Holder.MainNotImageViewHolder
 import com.example.hiary.R

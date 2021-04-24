@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hiary.Adapter.MainAdapter
-import com.example.hiary.Data.MainContents
+import com.example.hiary.DataClass.MainContents
 import com.example.hiary.R
 import kotlinx.android.synthetic.main.activity_main.*
 

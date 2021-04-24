@@ -1,8 +1,4 @@
-package com.example.hiary.Data
-
-import android.widget.ImageView
-import java.sql.Time
-import java.util.*
+package com.example.hiary.DataClass
 
 data class MainContents (val type : Int, var imageData : Int, var title: String, var contents: String, var date: String, var time: String){
 

@@ -28,6 +28,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/addMenuRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="536dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/startBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addDate"
+        app:layout_constraintVertical_bias="0.8" />
+
     <TextView
         android:id="@+id/addDate"
         android:layout_width="wrap_content"
@@ -40,22 +52,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Spinner
-        android:id="@+id/addSelectMenu"
-        android:layout_width="300dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginBottom="48dp"
-        android:background="@drawable/add_select_menu_background"
-        android:longClickable="false"
-        android:overlapAnchor="false"
-        android:spinnerMode="dropdown"
-        android:theme="@style/addSelectMenuTheme"
-        app:layout_constraintBottom_toTopOf="@+id/startBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addDate"
-        app:layout_constraintVertical_bias="0.6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

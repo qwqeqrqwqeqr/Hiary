@@ -5,11 +5,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.example.hiary.Data.MainContents
-import com.example.hiary.Data.SubContents
+import com.example.hiary.DataClass.SubContents
 import com.example.hiary.Holder.WriteMenuViewHolder
 import com.example.hiary.R
-import kotlinx.android.synthetic.main.activity_write_menu.*
 
 class WriteMenuAdapter (val list: MutableList<SubContents>, val context: Context):
     RecyclerView.Adapter<ViewHolder>() {
