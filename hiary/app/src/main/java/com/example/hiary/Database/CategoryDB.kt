@@ -8,8 +8,8 @@ import androidx.room.RoomDatabase
 //data class Category (var category : String){
 //
 //}
-@Database(entities = arrayOf(Category::class),version = 1,exportSchema = false)
-abstract class CategoryDB:RoomDatabase(), MutableList<Category> {
+@Database(entities = [Category::class],version = 1,exportSchema = false)
+abstract class CategoryDB:RoomDatabase(){
     abstract fun categoryDao(): CategoryDao
     companion object {
         private var instance: CategoryDB? = null

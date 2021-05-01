@@ -3,14 +3,13 @@ package com.example.hiary.Database
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import androidx.room.*
 
 @Entity(tableName = "category")
 class Category{
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey(autoGenerate = true) var no: Long?= null
     @ColumnInfo
-    var no: Long?= null
-    @ColumnInfo
-    var category: String = ""
+    var category: String? = null
 
     constructor(category: String){
         this.category = category

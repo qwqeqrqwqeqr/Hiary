@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         mainRecyclerView.adapter = MainAdapter(mainContentArray,this)
 
              mainPostBtn.setOnClickListener{
-            val mainPostIntent = Intent(this, WriteMenuActivity::class.java)
+            val mainPostIntent = Intent(this, AddActivity::class.java)
                  mainPostIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
                  mainPostIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(mainPostIntent)

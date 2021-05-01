@@ -7,9 +7,9 @@ import androidx.room.OnConflictStrategy.REPLACE
 import androidx.room.Query
 
 @Dao
-interface CategoryDao {
+interface  CategoryDao {
     @Query("SELECT * FROM category")
-    fun getAll(): ArrayList<Category>
+    fun getAll(): List<Category>
 
     @Insert(onConflict = REPLACE)
     fun insert(category: Category)

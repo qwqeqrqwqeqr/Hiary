@@ -1,5 +1,6 @@
 package com.example.hiary.Activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -22,35 +23,29 @@ class AddActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add)
         var categoryList : MutableList<Category>? = null
-        var categorySwitch: Category?
-
         var categoryDB = CategoryDB.getInstance(this)!!
+
         val savedcategoryList = categoryDB.categoryDao().getAll()
         if(savedcategoryList.isNotEmpty()){
             categoryList?.addAll(savedcategoryList)
         }
+        val adapter = AddAdapter(categoryDB,categoryList,this)
+        adapter.setItemClickListener(object : AddAdapter.OnItemClickListener{
+            override fun onClick(view: View, position: Int) {
+                val item = categoryList?.get(position)
+                val startIntent = Intent(this, StartActivity::class.java)
+            }
+        })
         addMenuRecyclerView.layoutManager = LinearLayoutManager(this)
-        addMenuRecyclerView.adapter = AddAdapter(categoryDB,categoryList,this)
-
+        addMenuRecyclerView.adapter = adapter
+        initClickBtn()
+    }
+    fun initClickBtn(){
+        addBackBtn.setOnClickListener {
+            val finishIntent = Intent(this, MainActivity::class.java)
+            finishIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            finishIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(finishIntent)
         }
     }
-//    fun baseData(categoryList : ArrayList<String>){
-//        categoryList.add("선택하세요")
-//        categoryList.add("추가")
-//    }
-//        a.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-//            override fun onItemSelected(
-//                parent: AdapterView<*>?,
-//                view: View?,
-//                position: Int,
-//                id: Long
-//            ) {
-//                if(categoryList.get(position).equals(1)){
-//                    val categoryDlg = CategoryPopupActivity(this@AddActivity)
-//                    categoryDlg.start()
-//                }
-//                categorySwitch = categoryList.get(position)
-//            }
-//            override fun onNothingSelected(parent: AdapterView<*>?) {
-//                categorySwitch = null
-//            }
+}

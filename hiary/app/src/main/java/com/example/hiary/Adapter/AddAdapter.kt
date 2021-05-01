@@ -14,6 +14,8 @@ import com.example.hiary.R
 class AddAdapter(val db: CategoryDB, var items: MutableList<Category>?, var context: Context)
     :RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.add_category_type,parent,false)
         return  AddMenuViewHolder(view)
@@ -25,12 +27,24 @@ class AddAdapter(val db: CategoryDB, var items: MutableList<Category>?, var cont
     fun getItem(): List<Category>?{
         return items
     }
-
-    override fun getItemCount(): Int {
-        return items!!.size
-    }
-
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         (holder as AddMenuViewHolder).bind(items!!.get(position),position)
+        holder.itemView.setOnClickListener {
+            itemClickListener.onClick(it,position)
+        }
     }
+    interface OnItemClickListener {
+        fun onClick(view: View, position: Int)
+    }
+    private lateinit var itemClickListener: OnItemClickListener
+
+    fun setItemClickListener(itemClickListener: OnItemClickListener){
+        this.itemClickListener =itemClickListener
+    }
+
+    override fun getItemCount(): Int {
+        return 0
+    }
+
+
 }
