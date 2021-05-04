@@ -13,5 +13,10 @@ class AddMenuViewHolder(view:View) : RecyclerView.ViewHolder(view) {
         index =position
         itemView.category.setText(category.category)
     }
+    init {
+        view.setOnClickListener {
+
+        }
+    }
 
 }

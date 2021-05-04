@@ -51,11 +51,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
-        <Space
+        <Button
+            android:id="@+id/addCategoryBtn"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginTop="12dp"
-            android:layout_marginRight="20dp" />
+            android:layout_marginRight="20dp"
+            android:background="@drawable/add_btn" />
 
     </LinearLayout>
 

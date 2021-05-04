@@ -3,10 +3,12 @@ package com.example.hiary.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
 import android.widget.Adapter
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hiary.Adapter.AddAdapter
@@ -16,6 +18,7 @@ import com.example.hiary.Database.CategoryDB
 import com.example.hiary.R
 import kotlinx.android.synthetic.main.activity_add.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.add_category_type.*
 import java.util.*
 
 class AddActivity : AppCompatActivity() {
@@ -30,15 +33,21 @@ class AddActivity : AppCompatActivity() {
             categoryList?.addAll(savedcategoryList)
         }
         val adapter = AddAdapter(categoryDB,categoryList,this)
-        adapter.setItemClickListener(object : AddAdapter.OnItemClickListener{
-            override fun onClick(view: View, position: Int) {
-                val item = categoryList?.get(position)
-                val startIntent = Intent(this, StartActivity::class.java)
-            }
-        })
         addMenuRecyclerView.layoutManager = LinearLayoutManager(this)
         addMenuRecyclerView.adapter = adapter
         initClickBtn()
+
+        addCategoryBtn.setOnClickListener {
+            val categoryPopupActivity = CategoryPopupActivity(this)
+            categoryPopupActivity.start()
+            categoryPopupActivity.setOnCLickedListenr(object : CategoryPopupActivity.ButtonClickLisener{
+                override fun onClicked(category: String) {
+
+//                   categoryList.add()
+                }
+            })
+        }
+
     }
     fun initClickBtn(){
         addBackBtn.setOnClickListener {

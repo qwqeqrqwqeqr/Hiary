@@ -24,12 +24,20 @@ class CategoryPopupActivity(context: Context) {
 
 
         categoryPopupAddbtnBtn.setOnClickListener {
+            onClickLisener.onClicked(categoryPopupPlaintext.text.toString())
             dlg.dismiss()
         }
         categoryPopupCancelBtn.setOnClickListener {
-
             dlg.dismiss()
         }
         dlg.show()
     }
+    interface  ButtonClickLisener{
+        fun onClicked(category: String)
+    }
+    private  lateinit var onClickLisener: ButtonClickLisener
+    fun setOnCLickedListenr(listener: ButtonClickLisener){
+        onClickLisener = listener
+    }
+
 }
