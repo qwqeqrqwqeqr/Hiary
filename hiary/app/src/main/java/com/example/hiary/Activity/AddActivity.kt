@@ -3,9 +3,6 @@ package com.example.hiary.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.widget.Adapter
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AlertDialog
@@ -20,6 +17,7 @@ import kotlinx.android.synthetic.main.activity_add.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.add_category_type.*
 import java.util.*
+import kotlin.collections.MutableList as MutableList
 
 class AddActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,10 +25,8 @@ class AddActivity : AppCompatActivity() {
         setContentView(R.layout.activity_add)
         var categoryList : MutableList<Category>? = null
         var categoryDB = CategoryDB.getInstance(this)!!
-
-        val savedcategoryList = categoryDB.categoryDao().getAll()
-        if(savedcategoryList.isNotEmpty()){
-            categoryList?.addAll(savedcategoryList)
+        if (categoryList != null) {
+            updateCategoryList(categoryList,categoryDB)
         }
         val adapter = AddAdapter(categoryDB,categoryList,this)
         addMenuRecyclerView.layoutManager = LinearLayoutManager(this)
@@ -42,13 +38,25 @@ class AddActivity : AppCompatActivity() {
             categoryPopupActivity.start()
             categoryPopupActivity.setOnCLickedListenr(object : CategoryPopupActivity.ButtonClickLisener{
                 override fun onClicked(category: String) {
-
-//                   categoryList.add()
+                    categoryDB.categoryDao().insert(category)
+                    if (categoryList != null) {
+                        updateCategoryList(categoryList,categoryDB)
+                    }
                 }
             })
         }
 
+
+
     }
+    fun updateCategoryList(categoryList: MutableList<Category> ,categoryDB: CategoryDB ){
+        categoryList.isEmpty()
+        val savedcategoryList = categoryDB.categoryDao().getAll()
+        if(savedcategoryList.isNotEmpty()){
+            categoryList?.addAll(savedcategoryList)
+        }
+    }
+
     fun initClickBtn(){
         addBackBtn.setOnClickListener {
             val finishIntent = Intent(this, MainActivity::class.java)

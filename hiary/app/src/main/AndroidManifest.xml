@@ -12,7 +12,6 @@
         <activity android:name=".Activity.WriteActivity" />
         <activity android:name=".Activity.StartActivity" />
         <activity android:name=".Activity.AddActivity" />
-        <activity android:name=".Activity.WriteMenuActivity" />
         <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

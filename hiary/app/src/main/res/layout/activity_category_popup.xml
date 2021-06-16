@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="120dp"
+    android:background="@color/background"
     android:orientation="vertical">
 
     <Space
@@ -11,24 +12,34 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:layout_weight="1"
         android:orientation="vertical">
 
         <EditText
             android:id="@+id/categoryPopupPlaintext"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
+            android:layout_weight="1"
             android:ems="10"
             android:hint="카테고리명을 입력하세요."
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:textColor="@color/icon"
+            android:textColorHighlight="@color/icon"
+            android:textColorHint="@color/icon"
+            android:textColorLink="@color/icon" />
+
     </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_weight="1" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:layout_weight="1"
         android:orientation="horizontal">
 
@@ -37,19 +48,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="등록" />
+            android:background="@color/background"
+            android:text="등록"
+            android:textColor="@color/icon" />
 
         <Button
             android:id="@+id/categoryPopupCancelBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="취소" />
+            android:background="@color/background"
+            android:text="취소"
+            android:textColor="@color/icon" />
     </LinearLayout>
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:layout_weight="1" />
 
 </LinearLayout>
