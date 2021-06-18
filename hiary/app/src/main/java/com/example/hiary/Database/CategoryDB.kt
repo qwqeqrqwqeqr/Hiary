@@ -5,10 +5,8 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-//data class Category (var category : String){
-//
-//}
-@Database(entities = [Category::class],version = 1,exportSchema = false)
+//https://raphaelh.tistory.com/41
+@Database(entities = arrayOf(Category::class),version = 3,exportSchema = false)
 abstract class CategoryDB:RoomDatabase(){
     abstract fun categoryDao(): CategoryDao
     companion object {
