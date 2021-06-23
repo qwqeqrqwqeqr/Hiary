@@ -8,7 +8,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".Activity.CategoryPopupActivity"></activity>
+        <activity android:name=".Popup.DeleteCategoryPopupActivity"></activity>
+        <activity android:name=".Popup.CategoryPopupActivity" />
         <activity android:name=".Activity.WriteActivity" />
         <activity android:name=".Activity.StartActivity" />
         <activity android:name=".Activity.AddActivity" />

@@ -1,11 +1,9 @@
-package com.example.hiary.Activity
-import kotlinx.android.synthetic.main.activity_main.*
+package com.example.hiary.Popup
 import android.app.Dialog
 import android.content.Context
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.view.Window
-import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import com.example.hiary.R
