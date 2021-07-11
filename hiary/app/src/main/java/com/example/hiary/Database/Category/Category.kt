@@ -1,4 +1,4 @@
-package com.example.hiary.Database
+package com.example.hiary.Database.Category
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

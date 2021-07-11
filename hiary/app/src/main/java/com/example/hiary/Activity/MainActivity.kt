@@ -5,19 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hiary.Adapter.MainAdapter
-import com.example.hiary.DataClass.MainContents
+import com.example.hiary.Database.Content.Content
 import com.example.hiary.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    var mainContentArray: MutableList<MainContents> = mutableListOf() //contents class RecyclerView Data Array
+    var mainContentArray: MutableList<Content> = mutableListOf() //contents class RecyclerView Data Array
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        mainRecyclerView.layoutManager = LinearLayoutManager(this)
-        mainRecyclerView.adapter = MainAdapter(mainContentArray,this)
 
              mainPostBtn.setOnClickListener{
             val mainPostIntent = Intent(this, AddActivity::class.java)

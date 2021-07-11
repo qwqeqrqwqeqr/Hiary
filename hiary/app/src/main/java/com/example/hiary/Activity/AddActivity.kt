@@ -7,13 +7,11 @@ import android.util.Log
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hiary.Adapter.AddAdapter
-import com.example.hiary.Database.Category
-import com.example.hiary.Database.CategoryDB
+import com.example.hiary.Database.Category.Category
+import com.example.hiary.Database.Category.CategoryDB
 import com.example.hiary.Popup.CategoryPopupActivity
-import com.example.hiary.Popup.DeleteCategoryPopupActivity
 import com.example.hiary.R
 import kotlinx.android.synthetic.main.activity_add.*
-import kotlinx.android.synthetic.main.add_category_type.*
 import kotlin.collections.MutableList as MutableList
 
 class AddActivity : AppCompatActivity() {

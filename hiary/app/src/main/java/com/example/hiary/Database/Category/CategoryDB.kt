@@ -1,4 +1,4 @@
-package com.example.hiary.Database
+package com.example.hiary.Database.Category
 
 import android.content.Context
 import androidx.room.Database

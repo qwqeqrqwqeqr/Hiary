@@ -1,4 +1,4 @@
-package com.example.hiary.Database
+package com.example.hiary.Database.Content
 
 import androidx.room.Dao
 import androidx.room.Delete
@@ -7,14 +7,13 @@ import androidx.room.OnConflictStrategy.REPLACE
 import androidx.room.Query
 
 @Dao
-interface CategoryDao {
-    @Query("SELECT * FROM Category")
-    fun getAll(): List<Category>
+interface ContentDao {
+    @Query("SELECT * FROM Content" )
+    fun getAll(): List<Content>
 
     @Insert(onConflict = REPLACE)
-    fun insert(category: Category)
+    fun insert(content: Content)
 
     @Delete
-    fun delete(category: Category)
-
+    fun delete(content: Content)
 }

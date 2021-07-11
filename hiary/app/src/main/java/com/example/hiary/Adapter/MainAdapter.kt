@@ -4,53 +4,68 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hiary.DataClass.MainContents
-import com.example.hiary.Holder.MainImageViewHolder
-import com.example.hiary.Holder.MainNotImageViewHolder
+import com.example.hiary.Database.Content.Content
 import com.example.hiary.R
 import java.lang.RuntimeException
 
-class MainAdapter(val list: MutableList<MainContents>, val context: Context):RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class MainAdapter(val contents: MutableList<Content>, val context: Context):RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view: View?
         return when(viewType){
-            MainContents.TEXT_TYPE->{
+            Content.TEXT_TYPE->{
                 view=LayoutInflater.from(parent.context).inflate(R.layout.main_not_image_type,parent,false)
-                MainNotImageViewHolder(view)
+                NotImageViewHolder(view)
             }
-            MainContents.IMAIGE_TYPE->{
+            Content.IMAGE_TYPE->{
                 view=LayoutInflater.from(parent.context).inflate(R.layout.main_image_type,parent,false)
-                MainImageViewHolder(view)
+                ImageViewHolder(view)
             }
             else-> throw  RuntimeException("unknown view type error")
         }
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-       val obj = list[position]
+       val obj = contents[position]
         when (obj.type){
-            MainContents.TEXT_TYPE ->{
-                (holder as MainNotImageViewHolder).title.text = obj.title
+            Content.TEXT_TYPE ->{
+                (holder as NotImageViewHolder).title.text = obj.title
                 holder.contents.text =obj.contents
-                holder.date.text = obj.contents
-                holder.time.text = obj.contents
+                holder.date.text = obj.date.toString() // 수정예정
+                holder.time.text = obj.time// 수정예정
             }
 
-            MainContents.IMAIGE_TYPE -> {
-                    (holder as MainImageViewHolder).title.text = obj.title
+            Content.IMAGE_TYPE -> {
+                    (holder as ImageViewHolder).title.text = obj.title
                     holder.contents.text =obj.contents
-                    holder.date.text=obj.date
-                    holder.time.text=obj.time
-                    holder.image.setImageResource(obj.imageData)
+                    holder.date.text= obj.date.toString()// 수정예정
+                    holder.time.text=obj.time // 수정예정
+                    holder.image.setImageResource(obj.image)
             }
         }
     }
     override fun getItemCount(): Int {
-        return  list.size
+        return  contents.size
     }
 
     override fun getItemViewType(position: Int): Int {
-        return list[position].type
+        return contents[position].type
+    }
+
+    inner  class ImageViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
+        var date : TextView = itemView.findViewById(R.id.date)
+        var time : TextView = itemView.findViewById(R.id.timer)
+        var title : TextView = itemView.findViewById(R.id.title)
+        var contents: TextView = itemView.findViewById(R.id.contents)
+        var image: ImageView = itemView.findViewById(R.id.image)
+    }
+    inner class NotImageViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
+        var date: TextView = itemView.findViewById(R.id.date)
+        var time: TextView = itemView.findViewById(R.id.timer)
+        var title: TextView = itemView.findViewById(R.id.title)
+        var contents: TextView = itemView.findViewById(R.id.contents)
     }
 }
